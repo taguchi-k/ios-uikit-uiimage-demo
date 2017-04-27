@@ -27,6 +27,13 @@ NSObject
 |---|---|---|
 |draw(in:) | 指定した範囲内に画像全体を描画する <br> 必要に応じてサイズを変更しフィットさせる | image.draw(in: CGRect(x: 0, y: 0, width: 80, height: 80)) |
 
+## UIImageをカメラロールに保存する際の注意点
+### info.plistの設定をしないとiOS10以降だと落ちるので注意
+1. info.plist に Privacy - Photo Library Usage Description を追加
+2. 利用する理由を記載する
+
+![demo_image](https://cloud.githubusercontent.com/assets/17519073/25495735/49746582-2bb9-11e7-859a-692a8d82d813.png)
+
 ## フレームワーク
 UIKit.framework
 
@@ -36,8 +43,8 @@ iOS2.0以上
 ## 開発環境
 |category | Version|
 |---|---|
-| Swift | 3.0.2 |
-| XCode | 8.2.1 |
+| Swift | 3.1 |
+| XCode | 8.3.2 |
 | iOS | 10.0〜 |
 
 ## 参考
