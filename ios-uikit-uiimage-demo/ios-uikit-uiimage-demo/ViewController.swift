@@ -112,7 +112,7 @@ class ViewController: UIViewController {
         let resizeImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         self.image = resizeImage
-        print("newSize:\(resizeImage?.size)")
+        print("newSize:\(String(describing: resizeImage?.size))")
     }
     
     /// 画像の一部分を切り抜く
@@ -147,6 +147,43 @@ class ViewController: UIViewController {
         let colorImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         self.image = colorImage
+    }
+
+    // MARK: - UIImageをカメラロールに保存する
+    // MARK: info.plist > Privacy - Photo Library Usage Description を設定しておかないとiOS10以降だと落ちる
+    @IBAction func didTapWriteToSavedPhotosAlbumButton(_ sender: UIButton) {
+        writeToSaveImage()
+    }
+
+    /// カメラロールに保存する
+    private func writeToSaveImage() {
+        guard let image = image else { return }
+        UIImageWriteToSavedPhotosAlbum(image, self, #selector(resultWriteToSave(image:error:contextInfo:)), nil)
+    }
+
+    /// UIImageWriteToSavedPhotosAlbum実行後に呼ばれる
+    func resultWriteToSave(image: UIImage, error: NSError?, contextInfo: UnsafeMutableRawPointer?) {
+
+        let title: String
+        let message: String
+
+        // 写真の利用を許可していなかったりするとerror
+        if let error = error {
+            title = "Error!"
+            message = error.localizedDescription
+        } else {
+            title = "完了"
+            message = "画像をカメラロールに保存しました"
+        }
+
+        showAlert(title: title, message: message)
+    }
+
+    /// アラート呼ぶメソッド（UIImageには関係ないです）
+    private func showAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        present(alert, animated: true, completion: nil)
     }
 }
 

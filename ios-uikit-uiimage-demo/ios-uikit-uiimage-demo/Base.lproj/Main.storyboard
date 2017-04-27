@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -28,11 +28,24 @@
                                     <constraint firstAttribute="height" constant="100" id="z8C-GA-6ui"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yfc-rQ-Q2g">
+                                <rect key="frame" x="30" y="607" width="315" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="WriteToSavedPhotosAlbum">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapWriteToSavedPhotosAlbumButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4c2-CF-gtR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ChT-qR-1Jd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HSU-oA-MWL"/>
+                            <constraint firstAttribute="trailing" secondItem="Yfc-rQ-Q2g" secondAttribute="trailing" constant="30" id="Kia-em-ydV"/>
                             <constraint firstItem="ChT-qR-1Jd" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="LYB-yJ-2d2"/>
+                            <constraint firstItem="Yfc-rQ-Q2g" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="30" id="iri-Nl-weT"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Yfc-rQ-Q2g" secondAttribute="bottom" constant="30" id="npT-KB-85F"/>
                         </constraints>
                     </view>
                     <connections>
