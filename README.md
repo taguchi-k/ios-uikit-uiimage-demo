@@ -30,7 +30,7 @@ NSObject
 ## UIImageをカメラロールに保存する際の注意点
 ### info.plistの設定をしないとiOS10以降だと落ちるので注意
 1. info.plist に Privacy - Photo Library Usage Description を追加
-2. 利用する理由を記載する
+2. 「写真」を利用する理由を記載する
 
 ![demo_image](https://cloud.githubusercontent.com/assets/17519073/25495735/49746582-2bb9-11e7-859a-692a8d82d813.png)
 
